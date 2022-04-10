@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Methods</title>
+</head>
+
+<body>
+
+    <script>
+
+        // ========= CYLINDER =========
+
+        const cylinder = {
+            radius: 6,
+            height: 18,
+
+            calcVolume() {
+                return Math.PI * this.radius ** 2 * this.height;
+            },
+
+            calcSquare() {
+                return 2 * Math.PI * this.radius ** 2 + 2 * Math.PI * this.radius * this.height;
+            }
+        };
+
+        const cylinderVolume = cylinder.calcVolume();
+        const cylinderSquare = cylinder.calcSquare();
+
+        console.log(cylinderVolume);
+        console.log(cylinderSquare);
+
+
+
+        // ======== getResult ========
+
+        function getResult(number1, number2, operator) {
+
+            const Calculations = {
+                get '+'() {
+                    return +[number1] + +[number2]
+                },
+                get '-'() {
+                    return [number1] - [number2]
+                },
+                get '/'() {
+                    return [number1] / [number2]
+                },
+                get '*'() {
+                    return [number1] * [number2]
+                }
+            }
+
+            return Calculations[operator];
+        }
+
+        const res = getResult(8, 5, '*');
+        console.log(res);
+
+
+
+        // ======== isCharPresent ========
+
+        function isCharPresent(string, symbol) {
+
+            for (i = 0; i < string.length; i++) {
+                if (string[i] === symbol) {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        const result = isCharPresent('Hello*', '*');
+        console.log(result);
+
+
+
+        // ======== charIndexOf ========
+
+        function charIndexOf(string, symbol) {
+
+            for (i = 0; i < string.length; i++) {
+                if (string[i] === symbol) {
+                    return i;
+                }
+            }
+
+            return '-1';
+        }
+
+        const indexOfSymbol = charIndexOf('hello*', '*')
+        console.log(indexOfSymbol);
+
+    </script>
+
+</body>
+
+</html>
