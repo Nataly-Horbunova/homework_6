@@ -39,25 +39,23 @@
 
         function getResult(number1, number2, operator) {
 
-            const Calculations = {
-                get '+'() {
+            switch (operator) {
+                case '+':
                     return +[number1] + +[number2];
-                },
-                get '-'() {
+                    break;
+                case '-':
                     return [number1] - [number2];
-                },
-                get '/'() {
-                    return [number1] / [number2];
-                },
-                get '*'() {
+                    break;
+                case '*':
                     return [number1] * [number2];
-                }
+                    break;
+                case '/':
+                    return [number1] / [number2];
+                    break;
             }
-
-            return Calculations[operator];
         }
 
-        const res = getResult(8, 5, '*');
+        const res = getResult(8, 5, '+');
         console.log(res);
 
 
